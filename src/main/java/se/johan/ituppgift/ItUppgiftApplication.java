@@ -1,0 +1,13 @@
+package se.johan.ituppgift;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ItUppgiftApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ItUppgiftApplication.class, args);
+    }
+
+}
