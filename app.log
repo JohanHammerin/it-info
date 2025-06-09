@@ -1,0 +1,4 @@
+2025-06-09 14:56:44 [main] INFO  se.johan.ituppgift.ItUppgiftApplication - Starting ItUppgiftApplication using Java 23.0.1 with PID 27433 (/Users/johanhammerin/Documents/programmering/projekt/it-uppgift/target/classes started by johanhammerin in /Users/johanhammerin/Documents/programmering/projekt/it-uppgift)
+2025-06-09 14:56:44 [main] DEBUG se.johan.ituppgift.ItUppgiftApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-09 14:56:44 [main] INFO  se.johan.ituppgift.ItUppgiftApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-09 14:56:45 [main] INFO  se.johan.ituppgift.ItUppgiftApplication - Started ItUppgiftApplication in 1.581 seconds (process running for 1.816)
