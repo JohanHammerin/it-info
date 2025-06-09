@@ -1,4 +1,4 @@
-package se.johan.ituppgift;
+package se.johan.ituppgift.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

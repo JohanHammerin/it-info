@@ -3,6 +3,8 @@ package se.johan.ituppgift;
 import jakarta.annotation.PostConstruct;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import se.johan.ituppgift.model.AppUser;
+import se.johan.ituppgift.repository.AppUserRepository;
 
 @Component
 public class BeforeConstruct {

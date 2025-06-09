@@ -1,4 +1,4 @@
-package se.johan.ituppgift;
+package se.johan.ituppgift.config;
 
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;

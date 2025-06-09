@@ -1,4 +1,4 @@
-package se.johan.ituppgift;
+package se.johan.ituppgift.config;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;

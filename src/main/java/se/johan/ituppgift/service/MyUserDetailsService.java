@@ -1,9 +1,12 @@
-package se.johan.ituppgift;
+package se.johan.ituppgift.service;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import se.johan.ituppgift.repository.AppUserRepository;
+import se.johan.ituppgift.exception.UserNotFoundException;
+import se.johan.ituppgift.model.AppUser;
 
 import java.util.List;
 

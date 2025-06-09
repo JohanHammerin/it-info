@@ -1,4 +1,4 @@
-package se.johan.ituppgift;
+package se.johan.ituppgift.service;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;

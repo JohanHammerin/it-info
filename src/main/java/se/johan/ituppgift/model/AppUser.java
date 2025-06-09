@@ -1,4 +1,4 @@
-package se.johan.ituppgift;
+package se.johan.ituppgift.model;
 
 
 import jakarta.persistence.Entity;

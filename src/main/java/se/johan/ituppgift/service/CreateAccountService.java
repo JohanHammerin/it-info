@@ -1,8 +1,10 @@
-package se.johan.ituppgift;
+package se.johan.ituppgift.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
+import se.johan.ituppgift.repository.AppUserRepository;
+import se.johan.ituppgift.model.AppUser;
 
 @Service
 public class CreateAccountService {

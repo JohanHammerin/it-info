@@ -1,4 +1,4 @@
-package se.johan.ituppgift;
+package se.johan.ituppgift.exception;
 
 public class UserNotFoundException extends RuntimeException {
     public UserNotFoundException(String message) {
