@@ -1,4 +1,8 @@
-2025-06-09 14:56:44 [main] INFO  se.johan.ituppgift.ItUppgiftApplication - Starting ItUppgiftApplication using Java 23.0.1 with PID 27433 (/Users/johanhammerin/Documents/programmering/projekt/it-uppgift/target/classes started by johanhammerin in /Users/johanhammerin/Documents/programmering/projekt/it-uppgift)
-2025-06-09 14:56:44 [main] DEBUG se.johan.ituppgift.ItUppgiftApplication - Running with Spring Boot v3.5.0, Spring v6.2.7
-2025-06-09 14:56:44 [main] INFO  se.johan.ituppgift.ItUppgiftApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-09 14:56:45 [main] INFO  se.johan.ituppgift.ItUppgiftApplication - Started ItUppgiftApplication in 1.581 seconds (process running for 1.816)
+2025-06-10 16:21:04 [main] INFO  se.johan.ituppgift.service.UserCreationIntegrationTest - Starting UserCreationIntegrationTest using Java 22.0.2 with PID 27928 (started by karls in C:\Users\karls\Documents\JavaProjects\IT & Säkerhet\it-info)
+2025-06-10 16:21:04 [main] DEBUG se.johan.ituppgift.service.UserCreationIntegrationTest - Running with Spring Boot v3.5.0, Spring v6.2.7
+2025-06-10 16:21:04 [main] INFO  se.johan.ituppgift.service.UserCreationIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+2025-06-10 16:21:09 [main] INFO  se.johan.ituppgift.service.UserCreationIntegrationTest - Started UserCreationIntegrationTest in 4.859 seconds (process running for 5.875)
+2025-06-10 16:21:09 [main] INFO  se.johan.ituppgift.LoggingComponent - Generated token: {org.springframework.security.oauth2.jwt.JwtClaimsSet@7eeabaf3}
+2025-06-10 16:21:09 [main] INFO  se.johan.ituppgift.LoggingComponent - Skapar en användare
+2025-06-10 16:21:10 [main] INFO  se.johan.ituppgift.LoggingComponent - Användare skapad
+2025-06-10 16:21:10 [main] INFO  se.johan.ituppgift.LoggingComponent - User saved to database

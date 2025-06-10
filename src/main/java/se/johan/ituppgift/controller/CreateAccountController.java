@@ -14,13 +14,18 @@ import se.johan.ituppgift.service.CreateAccountService;
 public class CreateAccountController {
 
     private CreateAccountService createAccountService;
+
     public CreateAccountController(CreateAccountService createAccountService, AppUserService appUserService) {
         this.createAccountService = createAccountService;
     }
 
     @PostMapping("/new")
-    public ResponseEntity<AppUser> create(@RequestBody @Valid AppUserDTO dto) {
-        AppUser savedUser = createAccountService.createUser(dto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
+    public ResponseEntity<String> create(@Valid AppUserDTO dto) {
+        createAccountService.createUser(dto);
+        if (dto == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Användare skapades ej");
+        } else {
+            return ResponseEntity.status(HttpStatus.CREATED).body("Användare skapad");
+        }
     }
 }

@@ -56,4 +56,5 @@ public class AppUser {
     public void setConsentGiven(boolean consentGiven) {
         this.consentGiven = consentGiven;
     }
+
 }

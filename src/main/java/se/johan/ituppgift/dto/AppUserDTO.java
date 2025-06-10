@@ -26,6 +26,7 @@ public class AppUserDTO {
     private boolean consentGiven;
 
     @NotBlank(message = "Rollen får inte vara tom.")
+    @Pattern(regexp = "^(USER|ADMIN)$", message = "Rollen måste vara 'USER' eller 'ADMIN'.")
     private String role;
 
     public @NotBlank(message = "Användarnamnet får inte vara tomt") String getUsername() {
