@@ -1,49 +1,66 @@
 package se.johan.ituppgift.controller;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import se.johan.ituppgift.dto.AppUserDTO;
 import se.johan.ituppgift.repository.AppUserRepository;
 
-import java.nio.file.AccessDeniedException;
-import java.util.Objects;
-
+/**
+ * Controller för att visa info om användare och olika roller.
+ *
+ * Innehåller endpoints för att kolla antal användare
+ * och skicka olika svar beroende på roll.
+ */
 @RestController
 public class InfoController {
 
     private final AppUserRepository appUserRepository;
 
+    /**
+     * Tar in vårt användar-repository via konstruktor.
+     *
+     * @param appUserRepository Repository för att hämta användardata
+     */
     public InfoController(AppUserRepository appUserRepository) {
         this.appUserRepository = appUserRepository;
     }
 
-    // Hjälpmetod: Kolla om användaren har en viss roll
-    private boolean hasRole(Authentication auth, String role) {
-        return auth.getAuthorities().stream()
-                .anyMatch(a -> a.getAuthority().equals(role));
-    }
-
+    /**
+     * Returnerar hur många användare som finns i databasen.
+     *
+     * @return text med totalt antal användare
+     */
     @GetMapping("/totalUsers")
     public String getTotalUser() {
         long totalUsers = appUserRepository.count();
         return "Antal användare: " + totalUsers;
     }
 
+    /**
+     * Exempel på endpoint för inloggade användare med USER eller ADMIN-roll.
+     *
+     * @return ett enkelt välkomstmeddelande
+     */
     @GetMapping("/user")
     public ResponseEntity<String> user() {
-            return ResponseEntity.ok("Välkommen användare USER/ADMIN");
+        return ResponseEntity.ok("Välkommen användare USER/ADMIN");
     }
 
+    /**
+     * Endpoint för användare med ADMIN-roll.
+     *
+     * @return ett enkelt meddelande till admin
+     */
     @GetMapping("/admin")
     public ResponseEntity<String> admin() {
         return ResponseEntity.ok("Välkommen ADMIN");
     }
 
+    /**
+     * Publik endpoint – kräver ingen inloggning.
+     *
+     * @return meddelande till vem som helst
+     */
     @GetMapping("/public")
     public ResponseEntity<String> welcome() {
         return ResponseEntity.ok("Välkommen PUBLIC");

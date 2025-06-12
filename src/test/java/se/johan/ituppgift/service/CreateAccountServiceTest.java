@@ -1,5 +1,6 @@
 package se.johan.ituppgift.service;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,7 +19,6 @@ import se.johan.ituppgift.repository.AppUserRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -76,6 +76,17 @@ class UserCreationIntegrationTest {
 
         assertNotNull(appUserRepository.findByUsername("fresh_new_user"));
     }
+
+    @Test
+    void deleteExistingUser() throws Exception {
+        mockMvc.perform(delete("/delete/user?id=1")
+                        .header("Authorization", "Bearer " + jwtToken))
+                .andExpect(status().isOk());
+
+        assertTrue(appUserRepository.findById(1L).isEmpty());
+    }
+
+
 
     @Test
     void createNewUser_shouldFail_whenJwtIsMissing() throws Exception {

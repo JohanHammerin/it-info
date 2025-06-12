@@ -5,11 +5,22 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
+/**
+ * DTO för att ta emot användarens registreringsdata.
+ *
+ * Innehåller validering för varje fält.
+ */
 public class AppUserDTO {
 
+    /**
+     * Användarnamn – får inte vara tomt.
+     */
     @NotBlank(message = "Användarnamnet får inte vara tomt")
     private String username;
 
+    /**
+     * Lösenord – minst 8 tecken, 1 stor bokstav, 2 siffror, 2 specialtecken.
+     */
     @NotBlank(message = "Lösenordet får inte vara tomt")
     @Schema(
             description = "Lösenordet måste vara minst 8 tecken, 1 stor bokstav, 2 siffror och 2 specialtecken",
@@ -21,44 +32,50 @@ public class AppUserDTO {
     )
     private String password;
 
-
+    /**
+     * Måste vara true för att användaren godkänt GDPR.
+     */
     @NotNull(message = "Du måste godkänna GDPR avtalet!")
     private boolean consentGiven;
 
+    /**
+     * Roll – måste vara 'USER' eller 'ADMIN'.
+     */
     @NotBlank(message = "Rollen får inte vara tom.")
     @Pattern(regexp = "^(USER|ADMIN)$", message = "Rollen måste vara 'USER' eller 'ADMIN'.")
     private String role;
 
-    public @NotBlank(message = "Användarnamnet får inte vara tomt") String getUsername() {
+    // GETTERS & SETTERS
+
+    public String getUsername() {
         return username;
     }
 
-    public void setUsername(@NotBlank(message = "Användarnamnet får inte vara tomt") String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    public @NotBlank(message = "Lösenordet får inte vara tomt") String getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(@NotBlank(message = "Lösenordet får inte vara tomt") String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    @NotNull(message = "Du måste godkänna GDPR avtalet!")
     public boolean isConsentGiven() {
         return consentGiven;
     }
 
-    public void setConsentGiven(@NotNull(message = "Du måste godkänna GDPR avtalet!") boolean consentGiven) {
+    public void setConsentGiven(boolean consentGiven) {
         this.consentGiven = consentGiven;
     }
 
-    public @NotBlank(message = "Rollen får inte vara tom.") String getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(@NotBlank(message = "Rollen får inte vara tom.") String role) {
+    public void setRole(String role) {
         this.role = role;
     }
 }

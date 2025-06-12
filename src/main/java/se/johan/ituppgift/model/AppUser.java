@@ -1,21 +1,44 @@
 package se.johan.ituppgift.model;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+/**
+ * Representerar en användare.
+ */
 @Entity
 public class AppUser {
+
+    /**
+     * Unikt ID, genereras automatiskt.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    /**
+     * Användarnamn.
+     */
     private String username;
+
+    /**
+     * Krypterat lösenord.
+     */
     private String password;
+
+    /**
+     * Användarroll, t.ex. "USER" eller "ADMIN".
+     */
     private String role;
+
+    /**
+     * Om användaren har gett sitt samtycke.
+     */
     private boolean consentGiven;
 
+    // Getters och setters
 
     public Long getId() {
         return id;
@@ -56,5 +79,4 @@ public class AppUser {
     public void setConsentGiven(boolean consentGiven) {
         this.consentGiven = consentGiven;
     }
-
 }
