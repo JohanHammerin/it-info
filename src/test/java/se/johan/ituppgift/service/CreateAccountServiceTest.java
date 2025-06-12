@@ -16,8 +16,7 @@ import se.johan.ituppgift.model.AppUser;
 import se.johan.ituppgift.model.LoginRequest;
 import se.johan.ituppgift.repository.AppUserRepository;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -47,11 +46,7 @@ class UserCreationIntegrationTest {
         AppUser existingUser = new AppUser();
         existingUser.setUsername("existingUser");
         existingUser.setPassword(passwordEncoder.encode("existingPassword"));
-        // Lägg till roll och andra fält som din AppUser kräver för att den ska sparas korrekt
-        // Om din AppUser har t.ex. ett 'role' fält:
-        existingUser.setRole("ADMIN"); // Se till att denna roll tillåter att skapa nya användare
-        // Om du har consent_given eller andra fält:
-        // existingUser.setConsentGiven(true);
+        existingUser.setRole("ADMIN");
         appUserRepository.save(existingUser);
 
         LoginRequest loginRequest = new LoginRequest("existingUser", "existingPassword");
@@ -64,7 +59,7 @@ class UserCreationIntegrationTest {
 
         jwtToken = authResult.getResponse().getContentAsString();
         assertNotNull(jwtToken);
-        assertTrue(jwtToken.length() > 0);
+        assertFalse(jwtToken.isEmpty());
     }
 
     @Test
