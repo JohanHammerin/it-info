@@ -6,7 +6,7 @@ package se.johan.ituppgift.exception;
 public class UserNotFoundException extends RuntimeException {
 
     /**
-     * Skapar undantaget med ett felmeddelande.
+     * Skapar exception med ett felmeddelande.
      *
      * @param message Beskrivning av felet
      */

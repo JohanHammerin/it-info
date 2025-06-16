@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
- * Hanterar globala undantag och skickar anpassade HTTP-svar.
+ * Hanterar globala exception och skickar anpassade HTTP-svar.
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -14,7 +14,7 @@ public class GlobalExceptionHandler {
     /**
      * Returnerar 404 om användaren inte hittas.
      *
-     * @param ex Undantaget som kastats
+     * @param ex exception som kastats
      * @return HTTP 404 med felmeddelande
      */
     @ExceptionHandler(UserNotFoundException.class)
@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
     /**
      * Returnerar 409 om användaren inte har godkänt GDPR.
      *
-     * @param ex Undantaget som kastats
+     * @param ex exception som kastats
      * @return HTTP 409 med felmeddelande
      */
     @ExceptionHandler(ConsentNotGivenException.class)

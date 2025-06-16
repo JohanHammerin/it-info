@@ -6,7 +6,7 @@ package se.johan.ituppgift.exception;
 public class ConsentNotGivenException extends RuntimeException {
 
     /**
-     * Skapar undantaget med ett eget felmeddelande.
+     * Skapar exception med ett eget felmeddelande.
      *
      * @param message Beskrivning av felet
      */
